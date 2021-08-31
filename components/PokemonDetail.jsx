@@ -65,7 +65,7 @@ export default function PokemonDetail({ name }) {
     setNamePokemon(name)
     setGetPokemonDetail(detailPoke)
     
-    localStorage.setItem('list-my-pokemon', JSON.stringify(myPokemon))
+    // localStorage.setItem('list-my-pokemon', JSON.stringify(myPokemon))
 
     if(loading) return null;
     if(error) return `Error! ${error}`;

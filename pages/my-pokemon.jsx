@@ -9,9 +9,9 @@ import PokemonCardCollection from '../components/PokemonCardCollection';
 export default function MyPokemon() {
   const { myPokemon } = useContext(PokemonContext)
 
-  useEffect(() => {
-    localStorage.setItem('list-my-pokemon', JSON.stringify(myPokemon))
-  }, [myPokemon])
+  // useEffect(() => {
+  //   localStorage.setItem('list-my-pokemon', JSON.stringify(myPokemon))
+  // }, [myPokemon])
   
   return (
     <Layout>
@@ -37,10 +37,10 @@ export default function MyPokemon() {
               </h1>
             :
               <>
-                {myPokemon.map((poke) => (
+                {myPokemon.map((poke, index) => (
                   <PokemonCardCollection 
                     poke = {poke} 
-                    key = {poke.id}
+                    key = {index}
                   />
                 ))}
               </>
