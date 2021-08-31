@@ -32,6 +32,7 @@ import {
   WrapperWeight,
   WrapperWeightHeight
 } from '../styled/components/PokemonDetail';
+import RenamePokemon from './RenamePokemon';
 
 export default function PokemonDetail({ name }) {
   const { 
@@ -43,6 +44,8 @@ export default function PokemonDetail({ name }) {
     myPokemon,
     showAlertSuccess,
     showAlertFailed,
+    showModalRename,
+    setShowModalRename,
     handleCatchPokemon
   } = useContext(PokemonContext);
 
@@ -64,8 +67,6 @@ export default function PokemonDetail({ name }) {
   useEffect(() => {
     setNamePokemon(name)
     setGetPokemonDetail(detailPoke)
-    
-    // localStorage.setItem('list-my-pokemon', JSON.stringify(myPokemon))
 
     if(loading) return null;
     if(error) return `Error! ${error}`;
@@ -120,7 +121,7 @@ export default function PokemonDetail({ name }) {
               >
                 <Image 
                   src={Pokeball}
-                  alt="poke-ball"
+                  alt='poke-ball'
                   width={50}
                   height={50}
                 />
@@ -291,6 +292,9 @@ export default function PokemonDetail({ name }) {
             </div>
         }
       </>
+      {showModalRename && (
+        <RenamePokemon />
+      )}
     </PokemonDetailWrapper>
   )
 }

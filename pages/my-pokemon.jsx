@@ -8,10 +8,6 @@ import PokemonCardCollection from '../components/PokemonCardCollection';
 
 export default function MyPokemon() {
   const { myPokemon } = useContext(PokemonContext)
-
-  // useEffect(() => {
-  //   localStorage.setItem('list-my-pokemon', JSON.stringify(myPokemon))
-  // }, [myPokemon])
   
   return (
     <Layout>
@@ -24,7 +20,7 @@ export default function MyPokemon() {
           <h1>
             My Pokemon List
           </h1>
-          {myPokemon === null 
+          {myPokemon === null || []
             ?
               <h1 className={css`
                 display: flex;

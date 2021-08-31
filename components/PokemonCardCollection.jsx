@@ -1,8 +1,8 @@
-import Image from "next/image";
+import Image from 'next/image';
 import { 
   CardPokemonContent, 
   CardPokemonWrapper 
-} from "../styled/components/PokemonCard";
+} from '../styled/components/PokemonCard';
 
 export default function PokemonCardCollection({ poke }) {
   return (

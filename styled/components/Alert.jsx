@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { mediaQueries } from '../Global';
 
 export const WrapperSuccess = styled.div`
   position: absolute;

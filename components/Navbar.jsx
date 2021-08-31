@@ -25,14 +25,10 @@ export default function Navbar() {
     myPokemon
   } = useContext(PokemonContext)
 
-  // useEffect(() => {
-  //   localStorage.setItem('list-my-pokemon', JSON.stringify(myPokemon))
-  // },[myPokemon])
-
   return (
     <BackgroundNavbar>
       <NavbarWrapper>
-        <Link href="/" passHref>
+        <Link href='/' passHref>
           <a className={css`width: 130px;`}>
             <Image 
               src={PokemonLogo}
@@ -42,7 +38,7 @@ export default function Navbar() {
           </a>
         </Link>
         <NavigateNavbar>
-          <Link href="/" passHref>
+          <Link href='/' passHref>
             <span className={css`
               ${ListNav}
               &:hover {
@@ -66,7 +62,7 @@ export default function Navbar() {
                 {myPokemon === null ? 0 : myPokemon.length}
               </span>
             </div>
-            <Link href="/my-pokemon" passHref>
+            <Link href='/my-pokemon' passHref>
               <span className={css`
                 ${ListNav}
                 &:hover {
@@ -89,7 +85,7 @@ export default function Navbar() {
         {showNavMobile && (
           <NavbarMobileWrapper>
             <section className={css`${NavbarMobileSection}`}>
-              <Link href="/" passHref>
+              <Link href='/' passHref>
                 <span className={css`
                   ${ListNavMobile}
                   border-bottom: 2px solid white;
@@ -113,7 +109,7 @@ export default function Navbar() {
                     {myPokemon === null ? 0 : myPokemon.length}
                   </span>
                 </div>
-                <Link href="/my-pokemon" passHref>
+                <Link href='/my-pokemon' passHref>
                   <span className={css`
                     ${ListNavMobile}
                     &:hover {
