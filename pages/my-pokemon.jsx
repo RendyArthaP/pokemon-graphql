@@ -37,7 +37,6 @@ export default function MyPokemon() {
                   <PokemonCardCollection 
                     poke = {poke} 
                     key = {index}
-                    index = {index}
                   />
                 ))}
               </CardPokemonWrapper>

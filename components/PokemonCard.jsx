@@ -48,6 +48,8 @@ export default function PokemonCard() {
                 pokemon.name.toLowerCase().includes(searchPokemon.toLowerCase())
               ) {
                 return pokemon
+              } else if(searchPokemon !== pokemon.name){
+                return <h1>Your pokemon not found</h1>
               }
                 return null
             }).slice(0, fetchData).map((pokemon) => (
