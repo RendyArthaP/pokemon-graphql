@@ -63,9 +63,11 @@ export default function PokemonProvider({ children }) {
   };
 
   const deleteMyPokemon = (pokemon) => {
-    // const data = JSON.parse(localStorage.getItem('list-my-pokemon'));
-    // const deleteMyPoke = data.filter((poke) => poke !== pokemon)
-    // setMyPokemon([...deleteMyPoke])
+    let data = JSON.parse(localStorage.getItem('list-my-pokemon')); 
+    let deletePoke = data.filter((poke, index) => index)
+
+    console.log('data',data);
+    console.log('delete',deletePoke);
   }
 
   return (

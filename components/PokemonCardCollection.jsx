@@ -7,24 +7,24 @@ import {
   ButtonDelete
 } from '../styled/components/PokemonCard';
 
-export default function PokemonCardCollection({ poke, index }) {
+export default function PokemonCardCollection({ poke }) {
   const { deleteMyPokemon } = useContext(PokemonContext)
   return (
     <div className={css`margin-bottom: 1rem;`}>
       <CardPokemonContent>
         <Image 
-          src={poke.dreamworld}
+          src={!!poke && poke.dreamworld}
           alt={poke.name}
           width={150}
           height={150}
         />
         <h1>
-          {poke.name.charAt(0).toUpperCase() + poke.name.slice(1)}
+          {!!poke &&poke.name.charAt(0).toUpperCase() + poke.name.slice(1)}
         </h1>
       </CardPokemonContent>
-      <ButtonDelete onClick={() => deleteMyPokemon(index)}>
+      <button className={css`${ButtonDelete}`} onClick={() => deleteMyPokemon(poke)}>
         Delete
-      </ButtonDelete>
+      </button>
     </div>
  
   )
