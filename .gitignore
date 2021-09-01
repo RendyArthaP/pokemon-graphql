@@ -19,6 +19,12 @@
 .DS_Store
 *.pem
 
+#pwa_file
+public/sw.js
+public/sw.js.map
+public/workbox-202dc43a.js
+public/workbox-202dc43a.js.map
+
 # debug
 npm-debug.log*
 yarn-debug.log*

@@ -14,8 +14,7 @@ export default function Home() {
   const { 
     setFetchData, 
     searchPokemon, 
-    setSearchPokemon,
-    handleSearchPokemon
+    setSearchPokemon
   } = useContext(PokemonContext);
 
   useEffect(() => {
@@ -36,8 +35,6 @@ export default function Home() {
       <NextSeo 
         title={SEOMeta.title}
         description={SEOMeta.description}
-        noindex
-        nofollow
       />
       <HomeWrapper>
         <HomeContent>

@@ -32,6 +32,7 @@ export default function Navbar() {
           <a className={css`width: 130px;`}>
             <Image 
               src={PokemonLogo}
+              alt='logo-pokemon'
               width={300}
               height={160}
             />
@@ -74,21 +75,21 @@ export default function Navbar() {
               </span>
             </Link>
           </div>
-          <Hamburger 
-            width={30}
-            height={30}
-            fill={'#FFFFFF'}
-            className={css`${HamburgerDisplay}`}
-            onClick={() => setShowNavMobile(!showNavMobile)}
-          />
         </NavigateNavbar>
+        <Hamburger 
+          width={30}
+          height={30}
+          fill={'#555555'}
+          className={css`${HamburgerDisplay}`}
+          onClick={() => setShowNavMobile(!showNavMobile)}
+        />
         {showNavMobile && (
           <NavbarMobileWrapper>
             <section className={css`${NavbarMobileSection}`}>
               <Link href='/' passHref>
                 <span className={css`
                   ${ListNavMobile}
-                  border-bottom: 2px solid white;
+                  border-bottom: 2px solid #555555;
                   &:hover {
                     color: #B3A125;
                   }
@@ -98,7 +99,7 @@ export default function Navbar() {
                 </span>
               </Link>
               <div className={css`
-                border-bottom: 2px solid white;
+                border-bottom: 2px solid #555555;
               `}>
                 <div className={css`${NotificationMobile}`}>
                   <span className={css`

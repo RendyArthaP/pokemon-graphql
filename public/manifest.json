@@ -1,0 +1,23 @@
+{
+  "name": "Pokemon - PWA",
+  "short_name": "Poke",
+  "description": "Pokemon Apps",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/maskable/logopokemon192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/maskable/logopokemon512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "theme_color": "#FFDE00",
+  "background_color": "#FFFFFF",
+  "display": "standalone"
+}

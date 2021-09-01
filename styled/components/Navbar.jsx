@@ -73,15 +73,18 @@ export const NavbarMobileSection = `
 export const ListNavMobile = `
   font-size: 22px;
   font-family: 'Poppins', sans-serif;
-  color: #FFFFFF;
+  color: #555555;
   margin-top: 0.5rem;
   margin-bottom: 1rem;
   cursor: pointer;
 `
 
 export const NavigateNavbar = styled.div`
-  display: flex;
-  flex-direction: row; 
+  flex-direction: row;
+  display: none;
+  ${mediaQueries[1]} {
+    display: flex;
+  } 
 `;
 
 export const ListNav = `
@@ -91,11 +94,7 @@ export const ListNav = `
   margin-right: 0.5rem;
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
-  color: #FFFFFF;
-  display: none;
-  ${mediaQueries[1]} {
-    display: flex;
-  }
+  color: #555555
 `;
 
 export const HamburgerDisplay = `
