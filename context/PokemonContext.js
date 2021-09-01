@@ -32,7 +32,7 @@ export default function PokemonProvider({ children }) {
       data = JSON.parse(localStorage.getItem('list-my-pokemon'));
     };
     if(inputNamePokemon === '') {
-      setAlert('Please input the new name')
+      setAlert('Please input the new name');
     } else {
       setMyPokemon([...data, {pokemons, newNamePokemon}]);
       localStorage.setItem('list-my-pokemon', JSON.stringify([...data, {pokemons, newNamePokemon}]));
