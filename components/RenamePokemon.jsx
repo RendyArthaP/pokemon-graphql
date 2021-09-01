@@ -11,8 +11,8 @@ import {
   WrapperModal 
 } from "../styled/components/RenamePokemon";
 
-export default function RenamePokemon() {
-  const { inputNamePokemon, setInputPokemon } = useContext(PokemonContext)
+export default function RenamePokemon({ inputNamePokemon, setInputPokemon, handleChangeName}) {
+  const { getPokemonDetail } = useContext(PokemonContext)
   return (
     <WrapperModal>
       <Background></Background>
@@ -21,7 +21,7 @@ export default function RenamePokemon() {
           <h4 className={css`text-align: center;`}>
             You must rename your pokemon:
           </h4>
-          <FormInput>
+          <FormInput onSubmit={(e) => handleChangeName(e, getPokemonDetail)}>
             <InputName 
               value={inputNamePokemon}
               onChange={(e) => setInputPokemon(e.target.value)}

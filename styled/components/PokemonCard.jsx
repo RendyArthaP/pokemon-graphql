@@ -36,6 +36,24 @@ export const CardPokemonContent = styled.div`
   background-color: #B3A125;
 `;
 
+export const ButtonDelete = styled.button`
+  background-color: #FF0000;
+  border: none;
+  width: 100%;
+  max-width: 235px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Poppins', 'sans-serif';
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -16px;
+`;
+
 export const Loader = keyframes`
   to {
     transform: rotate(360deg);

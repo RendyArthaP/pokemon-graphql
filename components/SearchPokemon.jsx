@@ -5,24 +5,15 @@ import {
   ButtonSearch
 } from '../styled/components/SearchPokemon';
 
-export default function SearchPokemon({ value, onChange}) {
+export default function SearchPokemon({ value, onChange }) {
   return (
     <WrapperSearchPokemon>
       <input 
         value={value}
         onChange={onChange}
         className={css`${SearchBoxPokemon}`}
+        placeholder="Search your pokemon name here"
       />
-      <button className={css`
-        ${ButtonSearch}
-        &:hover {
-          color: #3B4CCA;
-          background-color: #FFFFFF;
-        }
-      `}
-      >
-        Search
-      </button>
     </WrapperSearchPokemon>
   )
 }

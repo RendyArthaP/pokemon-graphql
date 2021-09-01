@@ -10,15 +10,28 @@ export default function PokemonProvider({ children }) {
   const [fetchData, setFetchData] = useState(6);
   const [showAlertSuccess, setShowAlertSuccess] = useState(false);
   const [showAlertFailed, setShowAlertFailed] = useState(false);
-  const [myPokemon, setMyPokemon] = useState([]);
   const [showModalRename, setShowModalRename] = useState(false);
-  const [inputNamePokemon, setInputPokemon] = useState("")
+  const [inputNamePokemon, setInputPokemon] = useState('');
+  const [searchPokemon, setSearchPokemon] = useState('');
+  const [myPokemon, setMyPokemon] = useState([]);
 
   useEffect(() => {
     setMyPokemon(JSON.parse(localStorage.getItem('list-my-pokemon')));
   }, []);
 
-  console.log(myPokemon);
+  const handleChangeName = (e, pokemons) => {
+    // e.preventDefault()
+    // const newName = {
+    //   name: inputNamePokemon
+    // }
+    // setMyPokemon([...myPokemon, newName])
+    // console.log(myPokemon);
+    // // if (inputNamePokemon === '') {
+    // //   alert('You need rename your pokemon')
+    // // } else {
+      
+    // // }
+  }
   
   const handleCatchPokemon = (pokemon) => {
     let data = JSON.parse(localStorage.getItem('list-my-pokemon'));
@@ -33,19 +46,27 @@ export default function PokemonProvider({ children }) {
       localStorage.setItem('list-my-pokemon', JSON.stringify(temporaryData));
       data = JSON.parse(localStorage.getItem('list-my-pokemon'));
     };
+      
       if(resultCatch % 2 === 0) {
         setShowAlertSuccess(true);
         setTimeout(() => {
           setShowAlertSuccess(false);
-        }, 3000);
+        }, 2000);
         setMyPokemon([...data, pokemon]);
+        localStorage.setItem('list-my-pokemon', JSON.stringify([...data, pokemon]));
       } else {
         setShowAlertFailed(true);
         setTimeout(() => {
           setShowAlertFailed(false);
-        }, 3000);
+        }, 2000);
       };
   };
+
+  const deleteMyPokemon = (pokemon) => {
+    // const data = JSON.parse(localStorage.getItem('list-my-pokemon'));
+    // const deleteMyPoke = data.filter((poke) => poke !== pokemon)
+    // setMyPokemon([...deleteMyPoke])
+  }
 
   return (
     <PokemonContext.Provider value={{ 
@@ -69,7 +90,11 @@ export default function PokemonProvider({ children }) {
       showModalRename,
       setShowModalRename,
       inputNamePokemon,
-      setInputPokemon
+      setInputPokemon,
+      handleChangeName,
+      deleteMyPokemon,
+      searchPokemon,
+      setSearchPokemon,
     }}
     >
       { children }

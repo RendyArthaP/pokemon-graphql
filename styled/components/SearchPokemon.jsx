@@ -11,26 +11,6 @@ export const WrapperSearchPokemon = styled.div`
   }
 `;
 
-export const ButtonSearch = `
-  background-color: #3B4CCA;
-  color: #FFFFFF;
-  font-family: 'Poppins', 'Sans-Serif';
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  margin-top: 0.5rem;
-  cursor: pointer;
-  ${mediaQueries[1]} {
-    margin-top: 0rem;
-    margin-left: 1rem;
-    width: 10rem;
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
-  }
-`;
-
 export const SearchBoxPokemon = `
   border: 2px solid #CC0000;
   border-radius: 5px;

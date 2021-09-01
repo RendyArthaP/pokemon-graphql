@@ -5,10 +5,10 @@ import { useContext, useEffect } from 'react';
 import { PokemonContext } from '../context/PokemonContext';
 import { css } from '@emotion/css';
 import PokemonCardCollection from '../components/PokemonCardCollection';
+import { CardPokemonWrapper } from '../styled/components/PokemonCard';
 
 export default function MyPokemon() {
   const { myPokemon } = useContext(PokemonContext)
-  
   return (
     <Layout>
       <NextSeo 
@@ -20,7 +20,7 @@ export default function MyPokemon() {
           <h1>
             My Pokemon List
           </h1>
-          {myPokemon === null || []
+          {myPokemon === null && []
             ?
               <h1 className={css`
                 display: flex;
@@ -32,14 +32,15 @@ export default function MyPokemon() {
                 You don't have Pokemon Card Collection
               </h1>
             :
-              <>
+              <CardPokemonWrapper>
                 {myPokemon.map((poke, index) => (
                   <PokemonCardCollection 
                     poke = {poke} 
                     key = {index}
+                    index = {index}
                   />
                 ))}
-              </>
+              </CardPokemonWrapper>
           }
         </HomeContent>
       </HomeWrapper>

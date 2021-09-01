@@ -13,7 +13,7 @@ import Link from 'next/link';
 import { GET_POKEMONS } from '../graphql/PokemonGraphql';
 
 export default function PokemonCard() {
-  const { getPokemon, setGetPokemon, fetchData } = useContext(PokemonContext);
+  const { getPokemon, setGetPokemon, fetchData, searchPokemon } = useContext(PokemonContext);
   const { data, loading, error } = useQuery(GET_POKEMONS, { onCompleted: setGetPokemon });
   const pokemonCollection = !!getPokemon && getPokemon.pokemons.results || [];
 
@@ -41,7 +41,16 @@ export default function PokemonCard() {
           />
         :
           <>
-            {pokemonCollection.slice(0, fetchData).map((pokemon) => (
+            {pokemonCollection.filter((pokemon) => {
+              if(searchPokemon === "") {
+                return pokemon
+              } else if(
+                pokemon.name.toLowerCase().includes(searchPokemon.toLowerCase())
+              ) {
+                return pokemon
+              }
+                return null
+            }).slice(0, fetchData).map((pokemon) => (
               <Link 
                 href={`/details/${pokemon.name}`}
                 key={pokemon.id}

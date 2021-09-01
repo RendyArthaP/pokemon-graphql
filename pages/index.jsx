@@ -1,4 +1,4 @@
-import { NextSeo } from 'next-seo'
+import { NextSeo } from 'next-seo';
 import { useContext, useEffect } from 'react';
 import Layout from '../components/Layout'
 import PokemonCard from '../components/PokemonCard';
@@ -11,8 +11,13 @@ import {
 } from '../styled/pages/Home';
 
 export default function Home() {
-  const { setFetchData } = useContext(PokemonContext)
-  
+  const { 
+    setFetchData, 
+    searchPokemon, 
+    setSearchPokemon,
+    handleSearchPokemon
+  } = useContext(PokemonContext);
+
   useEffect(() => {
     const scrollHandler = () => {
       const scrollable = document.documentElement.scrollHeight - window.innerHeight;
@@ -20,11 +25,11 @@ export default function Home() {
       if(scrolled === scrollable) {
         setFetchData(prev => prev + 6)
       }
-    }
-    window.addEventListener('scroll', scrollHandler)
+    };
+    window.addEventListener('scroll', scrollHandler);
     
-    return() => window.removeEventListener('scroll', scrollHandler)
-  }, [])
+    return() => window.removeEventListener('scroll', scrollHandler);
+  }, []);
 
   return (
     <Layout>
@@ -39,7 +44,10 @@ export default function Home() {
           <h1>
             Find your Pokemon, and Catch ém all!
           </h1>
-          <SearchPokemon />
+          <SearchPokemon 
+            value={searchPokemon}
+            onChange={(e) => setSearchPokemon(e.target.value)}
+          />
           <PokemonCard />
         </HomeContent>
       </HomeWrapper>

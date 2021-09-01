@@ -46,7 +46,10 @@ export default function PokemonDetail({ name }) {
     showAlertFailed,
     showModalRename,
     setShowModalRename,
-    handleCatchPokemon
+    handleCatchPokemon,
+    inputNamePokemon, 
+    setInputPokemon, 
+    handleChangeName
   } = useContext(PokemonContext);
 
   const { data: pokemon } = useQuery(GET_POKEMONS, { onCompleted: setGetPokemon });
@@ -107,25 +110,32 @@ export default function PokemonDetail({ name }) {
               max-width: 900px;
               width: 100%;
             `}>
-              <div 
-                className={css`
-                  cursor: pointer;
-                  display: flex;
-                  margin-top: 2rem;
-                  width: 3rem;
-                  margin-left: auto;
-                  margin-right: auto;
-                  animation: ${Bounce} 1s ease infinite;
-                `}
-                onClick={() => handleCatchPokemon(pokemonList)}
-              >
-                <Image 
-                  src={Pokeball}
-                  alt='poke-ball'
-                  width={50}
-                  height={50}
-                />
-              </div>
+              {showAlertFailed || showAlertSuccess === true
+                ?
+                  <h1 className={css`text-align: center;`}>
+                    Please Wait...
+                  </h1>
+                :
+                  <div 
+                    className={css`
+                      cursor: pointer;
+                      display: flex;
+                      margin-top: 2rem;
+                      width: 3rem;
+                      margin-left: auto;
+                      margin-right: auto;
+                      animation: ${Bounce} 1s ease infinite;
+                    `}
+                    onClick={() => handleCatchPokemon(pokemonList)}
+                  >
+                    <Image 
+                      src={Pokeball}
+                      alt='poke-ball'
+                      width={50}
+                      height={50}
+                    />
+                  </div>
+              }
                 <h3 className={css`text-align: center;`}>
                   Click the Pokeball to catch {pokemonDetail.name.charAt(0).toUpperCase() + pokemonDetail.name.slice(1)}
                 </h3>
@@ -293,7 +303,11 @@ export default function PokemonDetail({ name }) {
         }
       </>
       {showModalRename && (
-        <RenamePokemon />
+        <RenamePokemon 
+          inputNamePokemon = {inputNamePokemon}
+          setInputPokemon = {setInputPokemon}
+          handleChangeName = {handleChangeName}
+        />
       )}
     </PokemonDetailWrapper>
   )
