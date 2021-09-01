@@ -65,7 +65,7 @@ export default function PokemonDetail({ name }) {
     (pokemon) => pokemon.name === name
   );
 
-  const {id, ...pokemonList} = pokemonImage;
+  // const {id, ...pokemonList} = pokemonImage;
 
   useEffect(() => {
     setNamePokemon(name)
@@ -126,7 +126,7 @@ export default function PokemonDetail({ name }) {
                       margin-right: auto;
                       animation: ${Bounce} 1s ease infinite;
                     `}
-                    onClick={() => handleCatchPokemon(pokemonList)}
+                    onClick={() => handleCatchPokemon(pokemonImage)}
                   >
                     <Image 
                       src={Pokeball}

@@ -47,12 +47,6 @@ export const ButtonDelete = `
   margin-top: -16px;
 `;
 
-export const ContentCollection = `
-  display: flex;
-  flex-direction: column;
-  border: 1px solid black;
-`;
-
 export const Loader = keyframes`
   to {
     transform: rotate(360deg);

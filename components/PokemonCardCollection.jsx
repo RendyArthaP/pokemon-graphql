@@ -4,8 +4,7 @@ import { useContext } from 'react';
 import { PokemonContext } from '../context/PokemonContext';
 import { 
   CardPokemonContent, 
-  ButtonDelete,
-  ContentCollection
+  ButtonDelete
 } from '../styled/components/PokemonCard';
 
 export default function PokemonCardCollection({ poke }) {
@@ -21,6 +20,12 @@ export default function PokemonCardCollection({ poke }) {
       <h1>
         {!!poke &&poke.name.charAt(0).toUpperCase() + poke.name.slice(1)}
       </h1>
+      <button 
+        className={css`${ButtonDelete}`}
+        onClick={() => deleteMyPokemon()}
+      >
+        Delete
+      </button>
     </CardPokemonContent>
   )
 };
