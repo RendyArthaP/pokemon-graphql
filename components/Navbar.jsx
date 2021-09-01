@@ -23,7 +23,7 @@ export default function Navbar() {
     showNavMobile,
     setShowNavMobile,
     myPokemon
-  } = useContext(PokemonContext)
+  } = useContext(PokemonContext);
 
   return (
     <BackgroundNavbar>
@@ -128,4 +128,4 @@ export default function Navbar() {
       </NavbarWrapper>
     </BackgroundNavbar>
   )
-}
+};

@@ -20,40 +20,33 @@ export default function PokemonProvider({ children }) {
   }, []);
 
   const handleChangeName = (e, pokemons) => {
-    // e.preventDefault()
-    // const newName = {
-    //   name: inputNamePokemon
-    // }
-    // setMyPokemon([...myPokemon, newName])
-    // console.log(myPokemon);
-    // // if (inputNamePokemon === '') {
-    // //   alert('You need rename your pokemon')
-    // // } else {
-      
-    // // }
-  }
-  
-  const handleCatchPokemon = (pokemon) => {
+    e.preventDefault();
     let data = JSON.parse(localStorage.getItem('list-my-pokemon'));
-  
-    const maxNumber = 9;
-    const order = getPokemonDetail.pokemon.order;
-    const possibilityCatch = Math.floor(Math.random() * maxNumber);
-    const resultCatch = Math.floor((order / possibilityCatch) * 10);
-
+    const newNamePokemon = {
+      changeName: inputNamePokemon
+    };
     if(!data) {
       let temporaryData = [];
       localStorage.setItem('list-my-pokemon', JSON.stringify(temporaryData));
       data = JSON.parse(localStorage.getItem('list-my-pokemon'));
     };
-      
+    setMyPokemon([...data, {pokemons, newNamePokemon}]);
+    localStorage.setItem('list-my-pokemon', JSON.stringify([...data, {pokemons, newNamePokemon}]));
+    setShowModalRename(false);
+  };
+  
+  const handleCatchPokemon = (pokemon) => {
+    const maxNumber = 9;
+    const order = getPokemonDetail.pokemon.order;
+    const possibilityCatch = Math.floor(Math.random() * maxNumber);
+    const resultCatch = Math.floor((order / possibilityCatch) * 10);
+
       if(resultCatch % 2 === 0) {
         setShowAlertSuccess(true);
         setTimeout(() => {
           setShowAlertSuccess(false);
+          setShowModalRename(true);
         }, 2000);
-        setMyPokemon([...data, pokemon]);
-        localStorage.setItem('list-my-pokemon', JSON.stringify([...data, pokemon]));
       } else {
         setShowAlertFailed(true);
         setTimeout(() => {
@@ -64,11 +57,11 @@ export default function PokemonProvider({ children }) {
 
   const deleteMyPokemon = (pokemon, idPokemon) => {
     let filteredMyPokemon = myPokemon.filter((poke, indexPokemon) => {
-      return indexPokemon !== idPokemon
-    })
-    setMyPokemon(filteredMyPokemon)
-    localStorage.setItem('list-my-pokemon', JSON.stringify(filteredMyPokemon))
-  }
+      return indexPokemon !== idPokemon;
+    });
+    setMyPokemon(filteredMyPokemon);
+    localStorage.setItem('list-my-pokemon', JSON.stringify(filteredMyPokemon));
+  };
 
   return (
     <PokemonContext.Provider value={{ 

@@ -2,7 +2,6 @@ import { css } from '@emotion/css';
 import { 
   WrapperSearchPokemon, 
   SearchBoxPokemon,
-  ButtonSearch
 } from '../styled/components/SearchPokemon';
 
 export default function SearchPokemon({ value, onChange }) {
@@ -16,4 +15,4 @@ export default function SearchPokemon({ value, onChange }) {
       />
     </WrapperSearchPokemon>
   )
-}
+};

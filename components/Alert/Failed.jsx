@@ -2,8 +2,8 @@ import {
   SectionFailed, 
   WrapperFailed,
   TextDescriptionFailed
-} from "../../styled/components/Alert";
-import { css } from '@emotion/css'
+} from '../../styled/components/Alert';
+import { css } from '@emotion/css';
 
 export default function Failed({ name }) {
   return (
@@ -15,4 +15,4 @@ export default function Failed({ name }) {
       </SectionFailed>
     </WrapperFailed>
   )
-}
+};

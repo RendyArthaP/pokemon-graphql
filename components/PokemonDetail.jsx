@@ -45,7 +45,6 @@ export default function PokemonDetail({ name }) {
     showAlertSuccess,
     showAlertFailed,
     showModalRename,
-    setShowModalRename,
     handleCatchPokemon,
     inputNamePokemon, 
     setInputPokemon, 
@@ -65,15 +64,13 @@ export default function PokemonDetail({ name }) {
     (pokemon) => pokemon.name === name
   );
 
-  // const {id, ...pokemonList} = pokemonImage;
-
   useEffect(() => {
-    setNamePokemon(name)
-    setGetPokemonDetail(detailPoke)
+    setNamePokemon(name);
+    setGetPokemonDetail(detailPoke);
 
     if(loading) return null;
     if(error) return `Error! ${error}`;
-  }, [name, myPokemon])
+  }, [name, myPokemon]);
 
   return (
     <PokemonDetailWrapper>
@@ -311,4 +308,4 @@ export default function PokemonDetail({ name }) {
       )}
     </PokemonDetailWrapper>
   )
-}
+};

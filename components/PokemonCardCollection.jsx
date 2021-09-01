@@ -2,23 +2,22 @@ import { css } from '@emotion/css';
 import Image from 'next/image';
 import { useContext } from 'react';
 import { PokemonContext } from '../context/PokemonContext';
-import { 
-  CardPokemonContent, 
-  ButtonDelete
-} from '../styled/components/PokemonCard';
+import { CardPokemonContent, ButtonDelete } from '../styled/components/PokemonCard';
 
 export default function PokemonCardCollection({ poke, index }) {
-  const { deleteMyPokemon } = useContext(PokemonContext)
+  const { pokemons, newNamePokemon } = poke;
+  const { deleteMyPokemon } = useContext(PokemonContext);
+  
   return (
     <CardPokemonContent>
       <Image 
-        src={!!poke && poke.dreamworld}
-        alt={poke.name}
+        src={pokemons.dreamworld}
+        alt={pokemons.name}
         width={150}
         height={150}
       />
       <h1>
-        {!!poke &&poke.name.charAt(0).toUpperCase() + poke.name.slice(1)}
+        {newNamePokemon.changeName.charAt(0).toUpperCase() + newNamePokemon.changeName.slice(1)}
       </h1>
       <button 
         className={css`${ButtonDelete}`}

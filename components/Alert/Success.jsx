@@ -3,7 +3,7 @@ import {
   TextDescriptionSuccess,
   WrapperSuccess
 } from '../../styled/components/Alert';
-import { css } from '@emotion/css'
+import { css } from '@emotion/css';
 
 export default function Success({ name }) {
   return(
@@ -15,4 +15,4 @@ export default function Success({ name }) {
       </SectionSuccess>
     </WrapperSuccess>
   )
-}
+};

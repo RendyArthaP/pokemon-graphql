@@ -103,4 +103,4 @@ export const HamburgerDisplay = `
   ${mediaQueries[1]} {
     display: none;
   }
-`
+`;

@@ -1,14 +1,14 @@
 import { NextSeo } from 'next-seo';
 import Layout from '../components/Layout';
 import { HomeContent, HomeWrapper } from '../styled/pages/Home';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { PokemonContext } from '../context/PokemonContext';
 import { css } from '@emotion/css';
 import PokemonCardCollection from '../components/PokemonCardCollection';
 import { CardPokemonWrapper } from '../styled/components/PokemonCard';
 
 export default function MyPokemon() {
-  const { myPokemon } = useContext(PokemonContext)
+  const { myPokemon } = useContext(PokemonContext);
   return (
     <Layout>
       <NextSeo 
@@ -45,5 +45,5 @@ export default function MyPokemon() {
         </HomeContent>
       </HomeWrapper>
     </Layout>
-  )
-}
+  );
+};

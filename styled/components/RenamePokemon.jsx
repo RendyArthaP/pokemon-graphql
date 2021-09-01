@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { mediaQueries } from '../Global';
 
 export const WrapperModal = styled.div`
   width: 100%;

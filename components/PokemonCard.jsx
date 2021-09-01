@@ -18,11 +18,11 @@ export default function PokemonCard() {
   const pokemonCollection = !!getPokemon && getPokemon.pokemons.results || [];
 
   useEffect(() => {
-    setGetPokemon(data)
+    setGetPokemon(data);
 
     if(loading) return null;
     if(error) return `Error! ${error}`;
-  }, [data])
+  }, [data]);
 
   return (
     <CardPokemonWrapper>
@@ -42,7 +42,7 @@ export default function PokemonCard() {
         :
           <>
             {pokemonCollection.filter((pokemon) => {
-              if(searchPokemon === "") {
+              if(searchPokemon === '') {
                 return pokemon
               } else if(
                 pokemon.name.toLowerCase().includes(searchPokemon.toLowerCase())

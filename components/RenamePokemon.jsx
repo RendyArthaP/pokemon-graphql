@@ -1,6 +1,6 @@
-import { css } from "@emotion/css";
-import { useContext } from "react";
-import { PokemonContext } from "../context/PokemonContext";
+import { css } from '@emotion/css';
+import { useContext } from 'react';
+import { PokemonContext } from '../context/PokemonContext';
 import { 
   Background, 
   Button, 
@@ -9,10 +9,15 @@ import {
   Modal, 
   ModalWrapper, 
   WrapperModal 
-} from "../styled/components/RenamePokemon";
+} from '../styled/components/RenamePokemon';
 
 export default function RenamePokemon({ inputNamePokemon, setInputPokemon, handleChangeName}) {
-  const { getPokemonDetail } = useContext(PokemonContext)
+  const { getPokemon } = useContext(PokemonContext);
+  const pokemon = getPokemon.pokemons.results;
+  const pokemons = pokemon.find((poke) => {
+    return poke;
+  });
+
   return (
     <WrapperModal>
       <Background></Background>
@@ -21,12 +26,12 @@ export default function RenamePokemon({ inputNamePokemon, setInputPokemon, handl
           <h4 className={css`text-align: center;`}>
             You must rename your pokemon:
           </h4>
-          <FormInput onSubmit={(e) => handleChangeName(e, getPokemonDetail)}>
+          <FormInput onSubmit={(e) => handleChangeName(e, pokemons)}>
             <InputName 
               value={inputNamePokemon}
               onChange={(e) => setInputPokemon(e.target.value)}
             />
-            <Button type="submit">
+            <Button type='submit'>
               Submit
             </Button>
           </FormInput>
@@ -34,4 +39,4 @@ export default function RenamePokemon({ inputNamePokemon, setInputPokemon, handl
       </Modal>
     </WrapperModal>
   )
-}
+};
