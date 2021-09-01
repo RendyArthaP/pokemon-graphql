@@ -7,7 +7,7 @@ import {
   ButtonDelete
 } from '../styled/components/PokemonCard';
 
-export default function PokemonCardCollection({ poke }) {
+export default function PokemonCardCollection({ poke, index }) {
   const { deleteMyPokemon } = useContext(PokemonContext)
   return (
     <CardPokemonContent>
@@ -22,7 +22,7 @@ export default function PokemonCardCollection({ poke }) {
       </h1>
       <button 
         className={css`${ButtonDelete}`}
-        onClick={() => deleteMyPokemon()}
+        onClick={() => deleteMyPokemon(poke, index)}
       >
         Delete
       </button>

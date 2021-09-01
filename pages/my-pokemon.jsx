@@ -36,6 +36,7 @@ export default function MyPokemon() {
                 {myPokemon.map((poke, index) => (
                   <PokemonCardCollection 
                     poke = {poke} 
+                    index = {index}
                     key = {index}
                   />
                 ))}
