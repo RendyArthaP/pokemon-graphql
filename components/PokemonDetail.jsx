@@ -304,6 +304,7 @@ export default function PokemonDetail({ name }) {
           inputNamePokemon = {inputNamePokemon}
           setInputPokemon = {setInputPokemon}
           handleChangeName = {handleChangeName}
+          name = {name}
         />
       )}
     </PokemonDetailWrapper>

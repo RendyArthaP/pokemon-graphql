@@ -13,6 +13,7 @@ export default function PokemonProvider({ children }) {
   const [showModalRename, setShowModalRename] = useState(false);
   const [inputNamePokemon, setInputPokemon] = useState('');
   const [searchPokemon, setSearchPokemon] = useState('');
+  const [alert, setAlert] = useState('');
   const [myPokemon, setMyPokemon] = useState([]);
 
   useEffect(() => {
@@ -30,9 +31,14 @@ export default function PokemonProvider({ children }) {
       localStorage.setItem('list-my-pokemon', JSON.stringify(temporaryData));
       data = JSON.parse(localStorage.getItem('list-my-pokemon'));
     };
-    setMyPokemon([...data, {pokemons, newNamePokemon}]);
-    localStorage.setItem('list-my-pokemon', JSON.stringify([...data, {pokemons, newNamePokemon}]));
-    setShowModalRename(false);
+    if(inputNamePokemon === '') {
+      setAlert('Please input the new name')
+    } else {
+      setMyPokemon([...data, {pokemons, newNamePokemon}]);
+      localStorage.setItem('list-my-pokemon', JSON.stringify([...data, {pokemons, newNamePokemon}]));
+      setShowModalRename(false);
+      setInputPokemon('');
+    }
   };
   
   const handleCatchPokemon = (pokemon) => {
@@ -90,6 +96,8 @@ export default function PokemonProvider({ children }) {
       deleteMyPokemon,
       searchPokemon,
       setSearchPokemon,
+      alert,
+      setAlert
     }}
     >
       { children }

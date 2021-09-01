@@ -11,11 +11,11 @@ import {
   WrapperModal 
 } from '../styled/components/RenamePokemon';
 
-export default function RenamePokemon({ inputNamePokemon, setInputPokemon, handleChangeName}) {
-  const { getPokemon } = useContext(PokemonContext);
+export default function RenamePokemon({ name, inputNamePokemon, setInputPokemon, handleChangeName}) {
+  const { getPokemon, alert } = useContext(PokemonContext);
   const pokemon = getPokemon.pokemons.results;
   const pokemons = pokemon.find((poke) => {
-    return poke;
+    return poke.name === name;
   });
 
   return (
@@ -27,6 +27,14 @@ export default function RenamePokemon({ inputNamePokemon, setInputPokemon, handl
             You must rename your pokemon:
           </h4>
           <FormInput onSubmit={(e) => handleChangeName(e, pokemons)}>
+            <span className={css`
+              margin-bottom: 15px; 
+              margin-top: -15px;
+              text-align: center; 
+              color: #FF0000;
+            `}>
+              {alert}
+            </span>
             <InputName 
               value={inputNamePokemon}
               onChange={(e) => setInputPokemon(e.target.value)}
