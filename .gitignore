@@ -21,9 +21,7 @@
 
 #pwa_file
 public/sw.js
-public/sw.js.map
-public/workbox-202dc43a.js
-public/workbox-202dc43a.js.map
+public/workbox-21b21c9a.js
 
 # debug
 npm-debug.log*
