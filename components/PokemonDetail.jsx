@@ -1,5 +1,5 @@
+import React, { useContext, useEffect } from 'react';
 import { PokemonContext } from '../context/PokemonContext';
-import { useContext, useEffect } from 'react';
 import Spinner from '../public/icons/Spinner';
 import { css } from '@emotion/css';
 import { Loader } from '../styled/components/PokemonCard';

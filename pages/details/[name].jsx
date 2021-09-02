@@ -1,3 +1,4 @@
+import React from 'react';
 import { NextSeo } from 'next-seo';
 import Layout from '../../components/Layout';
 import { useRouter } from 'next/router';

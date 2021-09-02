@@ -1,5 +1,5 @@
+import React, { useContext } from 'react';
 import { css } from '@emotion/css';
-import { useContext } from 'react';
 import { PokemonContext } from '../context/PokemonContext';
 import { 
   Background, 

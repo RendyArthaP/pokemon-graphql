@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Spinner = ({
 	width,
 	height,
@@ -6,13 +8,13 @@ const Spinner = ({
 }) => {
   return (
 			<svg 
-				aria-hidden="true" 
-				focusable="false" 
-				data-prefix="fas" 
-				data-icon="circle-notch" 
-				role="img" 
-				xmlns="http://www.w3.org/2000/svg" 
-				viewBox="0 0 512 512"
+				aria-hidden='true' 
+				focusable='false' 
+				data-prefix='fas' 
+				data-icon='circle-notch' 
+				role='img' 
+				xmlns='http://www.w3.org/2000/svg' 
+				viewBox='0 0 512 512'
 				width={width}
 				height={height}
 				className={className}

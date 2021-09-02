@@ -1,6 +1,6 @@
+import React, { useContext } from 'react';
 import { css } from '@emotion/css';
 import Image from 'next/image';
-import { useContext } from 'react';
 import { PokemonContext } from '../context/PokemonContext';
 import { CardPokemonContent, ButtonDelete } from '../styled/components/PokemonCard';
 

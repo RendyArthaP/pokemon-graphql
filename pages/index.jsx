@@ -1,5 +1,5 @@
+import React, { useContext, useEffect } from 'react';
 import { NextSeo } from 'next-seo';
-import { useContext, useEffect } from 'react';
 import Layout from '../components/Layout';
 import PokemonCard from '../components/PokemonCard';
 import SearchPokemon from '../components/SearchPokemon';
