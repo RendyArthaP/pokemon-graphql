@@ -15,7 +15,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import PokemonLogo from '../public/LogoPokemon.png';
 import Hamburger from '../public/icons/HamburgerIcon';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { PokemonContext } from '../context/PokemonContext';
 
 export default function Navbar() {

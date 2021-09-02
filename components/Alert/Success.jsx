@@ -9,7 +9,10 @@ export default function Success({ name }) {
   return(
     <WrapperSuccess>
       <SectionSuccess>
-        <h1 className={css`${TextDescriptionSuccess}`}>
+        <h1 
+          className={css`${TextDescriptionSuccess}`} 
+          data-test='success-alert'
+        >
           You succeed catch {name}. See at your pokemon list!
         </h1>
       </SectionSuccess>
